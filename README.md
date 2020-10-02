@@ -12,7 +12,10 @@ With a placeholder:
 ```dart
 CachedNetworkImage(
         imageUrl: "http://via.placeholder.com/350x150",
-        placeholder: (context, url) => CircularProgressIndicator(),
+        placeholder: (context, url) => 
+                Center(
+                     child: CircularProgressIndicator(),
+                   ),
         errorWidget: (context, url, error) => Icon(Icons.error),
      ),
  ```
@@ -22,7 +25,9 @@ CachedNetworkImage(
 CachedNetworkImage(
         imageUrl: "http://via.placeholder.com/350x150",
         progressIndicatorBuilder: (context, url, downloadProgress) => 
-                CircularProgressIndicator(value: downloadProgress.progress),
+                Center(
+                        child: CircularProgressIndicator(value: downloadProgress.progress),
+                        ),
         errorWidget: (context, url, error) => Icon(Icons.error),
      ),
  ```
