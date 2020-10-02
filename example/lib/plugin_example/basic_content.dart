@@ -22,9 +22,11 @@ class BasicContent extends StatelessWidget {
             _sizedContainer(
               CachedNetworkImage(
                 progressIndicatorBuilder: (context, url, progress) =>
-                    CircularProgressIndicator(
-                  value: progress.progress,
-                ),
+                  Center(
+                    child: CircularProgressIndicator(
+                        value: progress.progress,
+                      ),
+                    ),
                 imageUrl:
                     'https://images.unsplash.com/photo-1532264523420-881a47db012d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9',
               ),
@@ -32,7 +34,9 @@ class BasicContent extends StatelessWidget {
             _sizedContainer(
               CachedNetworkImage(
                 placeholder: (context, url) =>
-                    const CircularProgressIndicator(),
+                  Center(
+                    child: CircularProgressIndicator(),
+                    ),
                 imageUrl: 'http://via.placeholder.com/200x150',
               ),
             ),
@@ -52,7 +56,9 @@ class BasicContent extends StatelessWidget {
                   ),
                 ),
                 placeholder: (context, url) =>
-                    const CircularProgressIndicator(),
+                    Center(
+                      child: CircularProgressIndicator(),
+                      ),
                 errorWidget: (context, url, error) => const Icon(Icons.error),
               ),
             ),
@@ -71,7 +77,9 @@ class BasicContent extends StatelessWidget {
               CachedNetworkImage(
                 imageUrl: 'http://notAvalid.uri',
                 placeholder: (context, url) =>
-                    const CircularProgressIndicator(),
+                    Center(
+                        child: CircularProgressIndicator(),
+                      ),
                 errorWidget: (context, url, error) => const Icon(Icons.error),
               ),
             ),
@@ -79,7 +87,9 @@ class BasicContent extends StatelessWidget {
               CachedNetworkImage(
                 imageUrl: 'not a uri at all',
                 placeholder: (context, url) =>
-                    const CircularProgressIndicator(),
+                    Center(
+                          child: CircularProgressIndicator(),
+                      ),
                 errorWidget: (context, url, error) => const Icon(Icons.error),
               ),
             ),
@@ -87,7 +97,9 @@ class BasicContent extends StatelessWidget {
               CachedNetworkImage(
                 imageUrl: 'http://via.placeholder.com/350x200',
                 placeholder: (context, url) =>
-                    const CircularProgressIndicator(),
+                    Center(
+                      child: CircularProgressIndicator(),
+                      ),
                 errorWidget: (context, url, error) => const Icon(Icons.error),
                 fadeOutDuration: const Duration(seconds: 1),
                 fadeInDuration: const Duration(seconds: 3),
